@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Respond - Show off your site's beautiful responsiveness.</title>
+    <link rel="stylesheet" href="respond.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Pacifico">
+</head>
+
+<body>
+    <div class="rs">
+        <div class="rs-background"></div>
+        <div class="rs-modal">
+            <div class="rs-header">
+                <h1 class="rs-title"><span>R</span>espond</h1>
+                <button class="rs-hideModalButton">
+                    <span>Hide Settings</span>
+                    <svg aria-hidden width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M8 0h2v18H8z"/><path d="M18 8v2H0V8z"/></g></svg>
+                </button>
+            </div>
+            <div class="rs-content">
+
+                <input class="rs-input rs-urlInput" aria-label="Target URL to Share" placeholder="yoursite.com" />
+
+                <div class="rs-select">
+                    <svg aria-hidden width="16" height="9" viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#069" fill-rule="evenodd" d="M14.32 0L8 5.9 1.68 0 0 1.56 7.98 9 16 1.56" />
+                    </svg>
+                    <select aria-label="Show Your Page On">
+                        <option value="group">All Devices</option>
+                        <option value="iphone" selected="selected">iPhone</option>
+                        <option value="ipad">iPad</option>
+                        <option value="macbook">Macbook</option>
+                        <option value="imac">iMac</option>
+                    </select>
+                    <span class="rs-select-hoverFocusBackground"></span>
+                </div>
+
+                <div class="rs-switch">
+                    <p aria-hidden class="rs-switch-label">
+                        <span>Enable Scrolling</span>
+                    </p>
+                    <div class="rs-switch-control">
+                        <input type="checkbox" id="switch" />
+                        <label for="switch">Enable Scrolling</label>
+                        <span class="rs-switch-hoverFocusBackground"></span>
+                    </div>
+                </div>
+
+                <input class="rs-input rs-backgroundColorInput" aria-label="Background Color" placeholder="CSS Background Color (Optional)" />
+
+                <!--<button class="rs-showUrlButton" disabled>Respond that!</button>-->
+
+                <div class="rs-links">
+                    <a href="https://github.com/ianrichard/respond" class="rs-githubLink">
+                        <svg aria-hidden width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0C4.47 0 0 4.6 0 10.25c0 4.54 2.86 8.37 6.84 9.73.5.1.7-.22.7-.5 0-.23-.03-1.04-.03-1.9-2.5.48-3.13-.62-3.33-1.2-.1-.3-.6-1.2-1.03-1.45-.35-.2-.85-.67 0-.68.78 0 1.34.74 1.53 1.05.9 1.55 2.34 1.12 2.9.85.1-.67.36-1.12.65-1.37-2.2-.26-4.54-1.14-4.54-5.07 0-1.1.4-2 1.02-2.72-.1-.26-.45-1.3.1-2.72 0 0 .84-.27 2.76 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.1 2.5.34 1.9-1.35 2.75-1.07 2.75-1.07.54 1.4.2 2.46.1 2.72.63.72 1 1.63 1 2.75 0 3.95-2.32 4.82-4.54 5.08.36.32.67.93.67 1.9v2.8c0 .28.2.6.7.5 4.06-1.4 6.8-5.32 6.8-9.73C20 4.6 15.53 0 10 0z" fill="#069" fill-rule="evenodd" />
+                        </svg>
+                        <span>Github</span>
+                    </a>
+                    <button class="rs-shareButton">
+                        <span>
+                            <svg aria-hidden width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg"><g fill="#069" fill-rule="evenodd"><path d="M10.83 4.05C1.46 3.53-.2 11.35.58 15c.67-1.95 4.5-6.7 10.25-6.08V4.05z"/><path d="M10 0l9.8 6.7-9.8 6.68"/></g></svg>
+                            <span>Share</span>
+                        </span>
+                    </button>
+                </div>
+
+                <textarea class="rs-shareTextarea" aria-hidden></textarea>
+
+            </div>
+        </div>
+        <div class="rs-section" id="group" style="display: none;">
+            <div class="rs-device rs-group-imac">
+                <img src="images/group-imac.png" />
+                <iframe></iframe>
+            </div>
+            <div class="rs-device rs-group-ipad">
+                <img src="images/group-ipad.png" />
+                <iframe></iframe>
+            </div>
+            <div class="rs-device rs-group-iphone">
+                <img src="images/group-iphone.png" />
+                <iframe></iframe>
+            </div>
+            <div class="rs-device rs-group-macbook">
+                <img src="images/group-macbook.png" />
+                <iframe></iframe>
+            </div>
+        </div>
+        <div class="rs-section" id="imac" style="display: none;">
+            <div class="rs-device rs-imac">
+                <img src="images/imac.png" />
+                <iframe></iframe>
+            </div>
+        </div>
+        <div class="rs-section" id="macbook" style="display: none;">
+            <div class="rs-device rs-macbook">
+                <img src="images/macbook.png" />
+                <iframe></iframe>
+            </div>
+        </div>
+        <div class="rs-section" id="ipad" style="display: none;">
+            <div class="rs-device rs-ipad">
+                <img src="images/ipad.png" />
+                <iframe></iframe>
+            </div>
+        </div>
+        <div class="rs-section" id="iphone" style="display: none;">
+            <div class="rs-device rs-iphone">
+                <img src="images/iphone.png" />
+                <iframe></iframe>
+            </div>
+        </div>
+        <button class="rs-showModalButton">
+            <span>Show Settings</span>
+            <svg aria-hidden width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M8 0h2v18H8z"/><path d="M18 8v2H0V8z"/></g></svg>
+        </button>
+    </div>
+</body>
+<script src="respond.js"></script>
+</html>

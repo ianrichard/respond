@@ -1,0 +1,586 @@
+.rs * {
+    box-sizing: border-box;
+}
+
+.rs *:focus {
+    outline: none;
+}
+
+.rs ::-webkit-input-placeholder {
+   color: #BDBDBD;;
+}
+
+.rs ::-moz-placeholder {
+   color: #BDBDBD;;
+}
+
+.rs :-ms-input-placeholder {
+   color: #BDBDBD;;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.rs {
+    color: #006699;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.rs-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.rs-modal {
+    background: #FFF;
+    border-radius: 4px;
+    bottom: 16px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    max-width: 500px;
+    min-width: 350px;
+    position: fixed;
+    right: 16px;
+    transform: translate3d(0,600px,0);
+    transition: transform .5s;
+    width: 30%;
+    z-index: 1;
+}
+
+.rs-modal:after {
+    border: 1px solid transparent;
+    bottom: -1px;
+    content: '';
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: -1;
+}
+
+.rs--withMenu .rs-modal {
+    transform: translate3d(0,0,0);
+}
+
+.rs-header {
+    position: relative;
+}
+
+.rs-title {
+    background: #006699;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #FFF;
+    font-family: 'Pacifico', cursive;
+    font-size: 26px;
+    font-weight: lighter;
+    margin: 0;
+    padding: 20px 32px;
+    text-align: center;
+}
+
+.rs-title span {
+    font-size: 29px;
+}
+
+.rs-hideModalButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    margin-right: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 64px;
+}
+
+.rs-hideModalButton svg {
+    height: 16px;
+    transform: rotate(45deg);
+    transition: transform .5s;
+    width: 16px;
+}
+
+.rs-hideModalButton:hover svg,
+.rs-hideModalButton:focus svg {
+    transform: rotate(135deg);
+}
+
+.rs-hideModalButton span {
+    position: absolute;
+    text-indent: 1000%;
+    white-space: nowrap;
+}
+
+.rs-select {
+    border-bottom: 1px solid #BDBDBD;
+    position: relative;
+}
+
+.rs-select .rs-select-hoverFocusBackground {
+    background: #FFF;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: background .5s;
+    width: 100%;
+    z-index: -2;
+}
+
+.rs-select:hover .rs-select-hoverFocusBackground {
+    background: #e6f0f5;
+}
+
+.rs-select select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border-radius: 0;
+    border: none;
+    color: #006699;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    margin: 0;
+    padding: 20px 24px;
+    width: 100%;
+}
+
+.rs-select select:focus + .rs-select-hoverFocusBackground {
+    background: #e6f0f5;
+}
+
+.rs-select svg {
+    height: 16px;
+    margin-top: -8px;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    width: 16px;
+    z-index: -1;
+}
+
+.rs-switch {
+    align-items: center;
+    border-bottom: 1px solid #BDBDBD;
+    display: flex;
+    padding: 16px 24px;
+    position: relative;
+}
+
+.rs-switch-label {
+    margin: 0;
+    flex: 1;
+    cursor: pointer;
+}
+
+.rs-switch-label span {
+    position: relative;
+}
+
+.rs-switch-label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background 0.4s;
+}
+
+.rs-switch-label:hover:before,
+.rs-switch-label:focus:before {
+    background: #e6f0f5;
+}
+
+.rs-switch-control {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.rs-switch-control input {
+    margin-left: -9999px;
+    position: absolute;
+    opacity: 0;
+}
+
+.rs-switch-control label {
+    background-color: #CCC;
+    border-radius: 16px;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    outline: none;
+    overflow: hidden;
+    padding: 2px;
+    position: relative;
+    text-indent: -1000px;
+    transition: background 0.4s;
+    user-select: none;
+    width: 56px;
+}
+
+.rs-switch-control label:before {
+    background-color: #fff;
+    border-radius: 16px;
+    bottom: 2px;
+    content: '';
+    display: block;
+    left: 2px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    transition: background 0.4s;
+}
+
+.rs-switch-control label:hover:before {
+    background-color: #e6f0f5;
+}
+
+.rs-switch-control label:after {
+    background-color: #DDD;
+    border-radius: 52px;
+    bottom: 4px;
+    box-shadow: inset 0 1px rgba(255,255,255,.2), 0 1px 1px rgba(0,0,0,.1);
+    content: "";
+    display: block;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    transition: margin 0.4s, background 0.4s;
+    width: 22px;
+}
+
+.rs-switch-control input:checked + label {
+    background-color: rgba(0, 102, 153, .5);
+}
+
+.rs-switch-control input:checked + label:after {
+    background-color: #006699;
+    margin-left: 26px;
+}
+
+.rs-switch-control label + .rs-switch-hoverFocusBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: background 0.4s;
+}
+
+.rs-switch-control input:focus + label + .rs-switch-hoverFocusBackground {
+    background: #e6f0f5;
+}
+
+.rs-input {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    color: #006699;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 19px 24px;
+    transition: background .5s;
+    width: 100%;
+}
+
+.rs-input:hover,
+.rs-input:focus {
+    background: #e6f0f5;
+}
+
+.rs-showUrlButton {
+    background: #DDD;
+    border-radius: 2px;
+    border: none;
+    box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 1px rgba(0,0,0,.14);
+    box-sizing: border-box;
+    color: #BDBDBD;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 8px 24px;
+    padding: 13px 16px;
+    text-transform: uppercase;
+    transition: background .25s, color .25s, box-shadow 1s;
+    width: calc(100% - 48px);
+}
+
+.rs-showUrlButton:not([disabled]) {
+    background: #006699;
+    color: #FFF;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+}
+
+.rs-showUrlButton:not([disabled]):hover,
+.rs-showUrlButton:not([disabled]):focus {
+    background: rgba(0, 102, 153, .9);
+}
+
+.rs-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.rs-shareButton,
+.rs-githubLink {
+    align-items: center;
+    background: none;
+    border-radius: 2px;
+    border: none;
+    color: #006699;
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    padding: 14px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background .25s;
+}
+
+.rs-shareButton span {
+    align-items: center;
+    display: flex;
+}
+
+.rs-shareButton:hover,
+.rs-githubLink:hover,
+.rs-shareButton:focus,
+.rs-githubLink:focus {
+    background: #e6f0f5;
+}
+
+.rs-shareButton svg,
+.rs-githubLink svg {
+    height: 20px;
+    margin-right: 4px;
+    width: 20px;
+}
+
+.rs-shareTextarea {
+    background: none;
+    border: none;
+    color: transparent;
+    height: 1px;
+    padding: 0;
+    position: absolute;
+    resize: none;
+    width: 1px;
+}
+
+.rs-section {
+    height: 900px;
+    min-width: 600px;
+    transform-origin: top left;
+    width: 1440px;
+}
+
+.rs-device iframe {
+    background: #FFF;
+    border: none;
+    overflow: hidden;
+    transform-origin: top left;
+}
+
+.rs-device iframe[src]:not([data-loaded]) {
+    background: #FFF url(images/loading.gif) center no-repeat;
+    background-size: 96px
+}
+
+.rs-device img,
+.rs-device iframe {
+    position: absolute;
+}
+
+.rs-group-imac img {
+    height: 691px;
+    left: 174px;
+    top: 56px;
+    width: 836px;
+}
+
+.rs-group-imac iframe {
+    height: 1080px;
+    left: 208px;
+    top: 90px;
+    transform: scale(0.4);
+    width: 1920px;
+}
+
+.rs-group-macbook img {
+    height: 403px;
+    left: 682px;
+    top: 443px;
+    width: 718px;
+}
+
+.rs-group-macbook iframe {
+    height: 900px;
+    left: 775px;
+    top: 466px;
+    transform: scale(0.374);
+    width: 1440px;
+}
+
+.rs-group-ipad img {
+    height: 419px;
+    left: 41px;
+    top: 384px;
+    width: 281px;
+}
+
+.rs-group-ipad iframe {
+    height: 1024px;
+    left: 57px;
+    top: 426px;
+    transform: scale(0.324);
+    width: 768px;
+}
+
+.rs-group-iphone img {
+    height: 270px;
+    left: 297px;
+    top: 570px;
+    width: 131px;
+}
+
+.rs-group-iphone iframe {
+    height: 667px;
+    left: 306px;
+    top: 603px;
+    transform: scale(0.304);
+    width: 375px;
+}
+
+.rs-imac img {
+    height: 864px;
+    left: 198px;
+    top: 20px;
+    width: 1045px;
+}
+
+.rs-imac iframe {
+    height: 1080px;
+    left: 241px;
+    top: 63px;
+    transform: scale(.5);
+    width: 1920px;
+}
+
+.rs-macbook img {
+    height: 725px;
+    left: 74px;
+    top: 88px;
+    width: 1292px;
+}
+
+.rs-macbook iframe {
+    height: 900px;
+    left: 238px;
+    top: 128px;
+    transform: scale(0.676);
+    width: 1440px;
+}
+
+.rs-ipad img {
+    height: 882px;
+    left: 423px;
+    top: 9px;
+    width: 595px;
+}
+
+.rs-ipad iframe {
+    height: 1040px;
+    left: 460px;
+    top: 96px;
+    transform: scale(0.676);
+    width: 768px;
+}
+
+.rs-iphone img {
+    height: 882px;
+    left: 503px;
+    top: 9px;
+    width: 434px;
+}
+
+.rs-iphone iframe {
+    height: 667px;
+    left: 532px;
+    top: 115px;
+    width: 375px;
+}
+
+.rs--withMenu .rs-showModalButton {
+    opacity: 1;
+    transition: transform .5s, opacity .5s;
+}
+
+.rs-showModalButton {
+    background: #006699;
+    border-radius: 50%;
+    border: none;
+    bottom: 32px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    cursor: pointer;
+    height: 64px;
+    opacity: 0;
+    padding: 0;
+    position: fixed;
+    right: 32px;
+    transform: translate3d(0,0,0);
+    transition: transform .5s, opacity 2s 2s;
+    width: 64px;
+    z-index: 1;
+}
+
+.rs-showModalButton:hover,
+.rs-showModalButton:focus {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.rs-showModalButton:before {
+    content: '';
+    height: 300px;
+    left: -150px;
+    position: absolute;
+    top: -150px;
+    width: 300px;
+}
+
+.rs--withMenu .rs-showModalButton {
+    transform: translate3d(0,300px,0);
+}
+
+.rs-showModalButton svg {
+    transition: transform .5s;
+}
+
+.rs-showModalButton:hover svg,
+.rs-showModalButton:focus svg {
+    transform: rotate(90deg);
+}
+
+.rs-showModalButton span {
+    position: absolute;
+    text-indent: 1000%;
+    white-space: nowrap;
+}
