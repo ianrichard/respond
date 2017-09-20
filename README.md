@@ -4,7 +4,7 @@
 
 Need to show off some of your responsive work to some co-workers or clients?  Don't want to spend a bunch of time Photoshopping?  No problem!
 
-Try it out at [showrespond.com](http://showrespond.com/).  Put in your site or something like mediaqueri.es to see it in action.
+[Try it out](https://ianrichard.github.io/respond/).  Put in your site or something like mediaqueri.es to see it in action.
 
 #### If it won't load...
 
